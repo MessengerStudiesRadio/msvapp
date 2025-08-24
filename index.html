@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LA'SHIR</title>
+    <link rel="icon" href="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3e%3crect width='100' height='100' rx='15' fill='%23f97316'/%3e%3ctext x='50' y='50' dy='.35em' font-family='sans-serif' font-size='55' font-weight='bold' fill='white' text-anchor='middle'%3eMSR%3c/text%3e%3c/svg%3e">
+    
+    <!-- Google Fonts: Yeseva One -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- YouTube IFrame Player API -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+
+    <!-- Polyfill for import maps to ensure module loading works robustly -->
+    <script async src="https://ga.jspm.io/npm:es-module-shims@1.10.0/dist/es-module-shims.js"></script>
+    
+    <!-- Babel to transpile JSX/TSX in the browser -->
+    <script src="https://unpkg.com/@babel/standalone@7.24.0/babel.min.js"></script>
+
+    <style>
+        html, body, #root {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevent double scrollbars when embedded */
+        }
+
+        /* CSS Variables for Theming */
+        :root {
+            --color-primary-100: 255 237 213; /* orange-100 */
+            --color-primary-200: 254 215 170; /* orange-200 */
+            --color-primary-300: 253 186 116; /* orange-300 */
+            --color-primary-400: 251 146 60;  /* orange-400 */
+            --color-primary-500: 249 115 22;   /* orange-500 */
+        }
+
+        /* Custom scrollbar for a more modern look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e5e7eb; /* bg-gray-200 */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #9ca3af; /* bg-gray-400 */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6b7280; /* bg-gray-500 */
+        }
+
+        .dark ::-webkit-scrollbar-track {
+            background: #1f2937; /* bg-gray-800 */
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #4b5563; /* bg-gray-600 */
+        }
+        .dark ::-webkit-scrollbar-thumb:hover {
+            background: #6b7280; /* bg-gray-500 */
+        }
+
+        /* Custom styles for range inputs (sliders) */
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 14px;
+            height: 14px;
+            background: rgb(var(--color-primary-400));
+            cursor: pointer;
+            border-radius: 50%;
+            margin-top: -5px; /* Adjust thumb position to be centered on the track */
+        }
+        input[type="range"]::-moz-range-thumb {
+            width: 14px;
+            height: 14px;
+            background: rgb(var(--color-primary-400));
+            cursor: pointer;
+            border-radius: 50%;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.2.0",
+    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
+    "react-dom/": "https://esm.sh/react-dom@18.2.0/",
+    "react/": "https://esm.sh/react@18.2.0/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.14.0",
+    "firebase/app": "https://esm.sh/firebase@10.12.2/app",
+    "firebase/auth": "https://esm.sh/firebase@10.12.2/auth",
+    "firebase/firestore": "https://esm.sh/firebase@10.12.2/firestore"
+  }
+}
+</script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            'yeseva': ['"Yeseva One"', 'cursive'],
+          },
+          colors: {
+            primary: {
+              100: 'rgb(var(--color-primary-100) / <alpha-value>)',
+              200: 'rgb(var(--color-primary-200) / <alpha-value>)',
+              300: 'rgb(var(--color-primary-300) / <alpha-value>)',
+              400: 'rgb(var(--color-primary-400) / <alpha-value>)',
+              500: 'rgb(var(--color-primary-500) / <alpha-value>)',
+            },
+          },
+          boxShadow: {
+            '2xl-top': '0 -25px 50px -12px rgb(0 0 0 / 0.25)',
+          },
+        }
+      }
+    }
+</script>
+<script type="text/babel" data-type="module" src="/index.tsx"></script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
